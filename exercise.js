@@ -1,3 +1,5 @@
+//Finding symetric differences between two or more sets
+
 function sym() {
   var args = [];
   for (var i = 0; i < arguments.length; i++) {
