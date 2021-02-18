@@ -1,28 +1,31 @@
 //Finding symetric differences between two or more sets
-
 function sym() {
   var args = [];
+
   for (var i = 0; i < arguments.length; i++) {
     args.push(arguments[i]);
   }
   console.log(args);
 
   function symDiff(arrayOne, arrayTwo) {
+    console.log(`two arrays printing.....`);
+
+    console.log(arrayOne);
+    console.log(arrayTwo);
+
     var result = [];
+    let y = 0;
 
     arrayOne.forEach(function(item) {
       if (arrayTwo.indexOf(item) < 0 && result.indexOf(item) < 0) {
         result.push(item);
-        console.log(result);
       }
     });
 
     arrayTwo.forEach(function(item) {
       if (arrayOne.indexOf(item) < 0 && result.indexOf(item) < 0) {
         result.push(item);
-        console.log(result);
-
-      }
+        }
     });
 
     return result;
