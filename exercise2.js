@@ -36,6 +36,16 @@ function updateInventory(arr1, arr2) {
   arr1.sort(function(currItem, nextItem) {
     //Ternary function to avoid using if else
     return currItem[1] > nextItem[1] ? 1 : -1;
+//OTHER WAY OF CODE
+  //   arr1.sort(function(a, b) {
+  //   if (a[1] > b[1]) {
+  //     return 1;
+  //   }
+  //   if (a[1] < b[1]) {
+  //     return -1;
+  //   }
+  //   return 0;
+  // });
   });
 
   return arr1;
