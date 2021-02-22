@@ -29,6 +29,9 @@ const pics = {
   kitty: 'https://content.codecademy.com/courses/React/react_photo-kitty.jpg',
   doggy: 'https://content.codecademy.com/courses/React/react_photo-puppy.jpeg'
 };
+
+// Normal if else conditions
+/*
 let img;
 
 // if/else statement begins here:
@@ -40,5 +43,8 @@ else
 {
 img = (<img src={pics.doggy}/>);
 }
+*/
+
+const img = <img src={ coinToss() === 'heads' ? pics.kitty : pics.doggy} />;
 
 ReactDOM.render(img, document.getElementById('root'));
