@@ -19,6 +19,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import Favourite from './Favourite';
+
+
 
 function coinToss() {
   // This function will randomly return either 'heads' or 'tails'.
@@ -46,5 +49,7 @@ img = (<img src={pics.doggy}/>);
 */
 
 const img = <img src={ coinToss() === 'heads' ? pics.kitty : pics.doggy} />;
+
+//ReactDOM.render(<Favourite/>, document.getElementById('root'));
 
 ReactDOM.render(img, document.getElementById('root'));
