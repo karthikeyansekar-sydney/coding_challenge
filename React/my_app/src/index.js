@@ -35,9 +35,9 @@ const pics = {
 
 const people = ['Rowe', 'Prevost', 'Gare'];
 
-const peopleLis = people.map(person =>
+const peopleLis = people.map((person,i) =>
   // expression goes here:
-<li>{person}</li>
+<li key= {'person_' + i}>{person}</li>
 );
 
 // Normal if else conditions
