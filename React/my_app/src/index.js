@@ -33,6 +33,13 @@ const pics = {
   doggy: 'https://content.codecademy.com/courses/React/react_photo-puppy.jpeg'
 };
 
+const people = ['Rowe', 'Prevost', 'Gare'];
+
+const peopleLis = people.map(person =>
+  // expression goes here:
+<li>{person}</li>
+);
+
 // Normal if else conditions
 /*
 let img;
@@ -50,6 +57,6 @@ img = (<img src={pics.doggy}/>);
 
 const img = <img src={ coinToss() === 'heads' ? pics.kitty : pics.doggy} />;
 
-//ReactDOM.render(<Favourite/>, document.getElementById('root'));
+ReactDOM.render(peopleLis, document.getElementById('root'));
 
-ReactDOM.render(img, document.getElementById('root'));
+//ReactDOM.render(img, document.getElementById('root'));
