@@ -20,7 +20,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import Favourite from './Favourite';
-
+import Owl from './Owl';
 
 
 function coinToss() {
@@ -81,4 +81,6 @@ const img = <img src={ coinToss() === 'heads' ? pics.kitty : pics.doggy} />;
 
 //ReactDOM.render(img, document.getElementById('root'));
 
-ReactDOM.render(<QuoteMaker/>, document.getElementById('root'));
+//ReactDOM.render(<QuoteMaker/>, document.getElementById('root'));
+
+ReactDOM.render(<Owl/>, document.getElementById('root'));
