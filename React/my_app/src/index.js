@@ -55,6 +55,17 @@ img = (<img src={pics.doggy}/>);
 }
 */
 
+class MyName extends React.Component {
+	// name property goes here:
+get name() {
+  return 'yeskay';
+}
+
+  render() {
+    return <h1>My name is {this.name}.</h1>;
+  }
+}
+
 
 class QuoteMaker extends React.Component {
   render() {
@@ -86,3 +97,5 @@ const img = <img src={ coinToss() === 'heads' ? pics.kitty : pics.doggy} />;
 //ReactDOM.render(<Owl/>, document.getElementById('root'));
 
 ReactDOM.render(<TonightsPlan/>, document.getElementById('root'));
+
+//ReactDOM.render(<MyName/>, document.getElementById('root'));
