@@ -88,6 +88,57 @@ class QuoteMaker extends React.Component {
 
 const img = <img src={ coinToss() === 'heads' ? pics.kitty : pics.doggy} />;
 
+  class Contact extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = {
+        password: 'swordfish',
+        authorized: false
+      };
+      this.authorize = this.authorize.bind(this);
+    }
+
+    authorize(e) {
+      const password = e.target.querySelector(
+        'input[type="password"]').value;
+      const auth = password == this.state.password;
+      this.setState({
+        authorized: auth
+      });
+    }
+
+    render() {
+
+      const login = (<form action="#" onSubmit={this.authorize}>
+      <input type="password" placeholder="Password"/>
+      <input type="submit"/>
+      </form>);
+
+  const contactInfo = (
+     <ul>
+            <li>
+              client@example.com
+            </li>
+            <li>
+              555.555.
+            </li>
+          </ul>
+  );
+
+      return (
+        <div id="authorization">
+          <h1>Contact</h1>
+        {this.state.authorized ? contactInfo : login}
+        </div>
+      );
+    }
+  }
+
+  ReactDOM.render(
+    <Contact />,
+    document.getElementById('root')
+  );
+
 //ReactDOM.render(peopleLis, document.getElementById('root'));
 
 //ReactDOM.render(img, document.getElementById('root'));
@@ -96,6 +147,6 @@ const img = <img src={ coinToss() === 'heads' ? pics.kitty : pics.doggy} />;
 
 //ReactDOM.render(<Owl/>, document.getElementById('root'));
 
-ReactDOM.render(<TonightsPlan/>, document.getElementById('root'));
+//ReactDOM.render(<TonightsPlan/>, document.getElementById('root'));
 
 //ReactDOM.render(<MyName/>, document.getElementById('root'));
