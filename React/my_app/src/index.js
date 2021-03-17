@@ -148,7 +148,23 @@ const img = <img src={ coinToss() === 'heads' ? pics.kitty : pics.doggy} />;
     }
   }
 
-  ReactDOM.render(<ProfilePage/>,document.getElementById('root'));
+  class PropsDisplayer extends React.Component {
+    render() {
+    	const stringProps = JSON.stringify(this.props);
+
+      return (
+        <div>
+          <h1>CHECK OUT MY PROPS OBJECT</h1>
+          <h2>{stringProps}</h2>
+        </div>
+      );
+    }
+  }
+
+  // ReactDOM.render goes here:
+  ReactDOM.render(<PropsDisplayer myProp="Hello"/>,document.getElementById('root'));
+
+//ReactDOM.render(<ProfilePage/>,document.getElementById('root'));
 
 //ReactDOM.render(<Contact />,document.getElementById('root'));
 
