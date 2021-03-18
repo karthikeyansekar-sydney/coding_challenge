@@ -23,6 +23,7 @@ import Favourite from './Favourite';
 import Owl from './Owl';
 import { NavBar } from './NavBar';
 import TonightsPlan from './TonightsPlan';
+import { Button } from './Button';
 
 function coinToss() {
   // This function will randomly return either 'heads' or 'tails'.
@@ -161,8 +162,27 @@ const img = <img src={ coinToss() === 'heads' ? pics.kitty : pics.doggy} />;
     }
   }
 
-  // ReactDOM.render goes here:
-  ReactDOM.render(<PropsDisplayer myProp="Hello"/>,document.getElementById('root'));
+  class Talker extends React.Component {
+    talk() {
+      let speech = '';
+      for (let i = 0; i < 10000; i++) {
+        speech += 'blah ';
+      }
+      alert(speech);
+    }
+
+    render() {
+      return <Button talk={this.talk}/>;
+    }
+  }
+
+  ReactDOM.render(
+    <Talker />,
+    document.getElementById('root')
+  );
+
+
+//  ReactDOM.render(<PropsDisplayer myProp="Hello">,document.getElementById('root'));
 
 //ReactDOM.render(<ProfilePage/>,document.getElementById('root'));
 
