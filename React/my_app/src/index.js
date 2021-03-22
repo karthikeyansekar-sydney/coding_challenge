@@ -24,6 +24,28 @@ import Owl from './Owl';
 import { NavBar } from './NavBar';
 import TonightsPlan from './TonightsPlan';
 import { Button } from './Button';
+import { List } from './List';
+
+
+
+class App extends React.Component {
+  render() {
+    return (
+      <div>
+        <List type='Living Musician'>
+          <li>Sachiko M</li>
+          <li>Harvey Sid Fisher</li>
+        </List>
+        <List type='Living Cat Musician'>
+          <li>Nora the Piano Cat</li>
+          <li>sarah the Piano Cat</li>
+        </List>
+      </div>
+    );
+  }
+}
+
+
 
 function coinToss() {
   // This function will randomly return either 'heads' or 'tails'.
@@ -176,11 +198,15 @@ const img = <img src={ coinToss() === 'heads' ? pics.kitty : pics.doggy} />;
     }
   }
 
+
+
   ReactDOM.render(
-    <Talker />,
+    <App />,
     document.getElementById('root')
   );
 
+
+//  ReactDOM.render(<Talker />,document.getElementById('root'));
 
 //  ReactDOM.render(<PropsDisplayer myProp="Hello">,document.getElementById('root'));
 
