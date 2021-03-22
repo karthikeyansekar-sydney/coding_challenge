@@ -198,12 +198,22 @@ const img = <img src={ coinToss() === 'heads' ? pics.kitty : pics.doggy} />;
     }
   }
 
+  class Switch extends React.Component {
+    render() {
+      return (
+        <button>
+          {this.props.text}
+        </button>
+      );
+    }
+  }
 
+  // defaultProps:
+  Switch.defaultProps = { text: 'I am a button' };
 
-  ReactDOM.render(
-    <App />,
-    document.getElementById('root')
-  );
+  ReactDOM.render(<Switch/>,document.getElementById('root'));
+
+//  ReactDOM.render(<App />,document.getElementById('root'));
 
 
 //  ReactDOM.render(<Talker />,document.getElementById('root'));
