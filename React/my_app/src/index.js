@@ -45,6 +45,21 @@ class App extends React.Component {
   }
 }
 
+class Appl extends React.Component {
+	// constructor method begins here:
+constructor(props){
+  super(props);
+  this.state = { title: 'Best App'};
+}
+
+  render() {
+    return (
+      <h1>
+        {this.state.title}
+      </h1>
+    );
+  }
+}
 
 
 function coinToss() {
@@ -211,7 +226,10 @@ const img = <img src={ coinToss() === 'heads' ? pics.kitty : pics.doggy} />;
   // defaultProps:
   Switch.defaultProps = { text: 'I am a button' };
 
-  ReactDOM.render(<Switch/>,document.getElementById('root'));
+  ReactDOM.render(<Appl/>, document.getElementById('root'));
+
+
+//  ReactDOM.render(<Switch/>,document.getElementById('root'));
 
 //  ReactDOM.render(<App />,document.getElementById('root'));
 
