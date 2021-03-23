@@ -26,6 +26,35 @@ import TonightsPlan from './TonightsPlan';
 import { Button } from './Button';
 import { List } from './List';
 
+const green = '#39D1B4';
+const yellow = '#FFD712';
+
+class Toggle extends React.Component {
+
+   constructor(props) {
+    super(props);
+    this.state = { color: green };
+    this.changeColor = this.changeColor.bind(this);
+  }
+
+changeColor() {
+ const newColor = this.state.color == green ? yellow : green;
+    this.setState({ color: newColor });
+}
+
+  render() {
+    return (
+      <div style={{background: this.state.color}}>
+        <h1>
+          Change my color
+        </h1>
+        <button onClick={this.changeColor}>
+        Change color
+        </button>
+      </div>
+    );
+  }
+}
 
 
 class App extends React.Component {
@@ -226,7 +255,10 @@ const img = <img src={ coinToss() === 'heads' ? pics.kitty : pics.doggy} />;
   // defaultProps:
   Switch.defaultProps = { text: 'I am a button' };
 
-  ReactDOM.render(<Appl/>, document.getElementById('root'));
+  ReactDOM.render(<Toggle />, document.getElementById('root'));
+
+
+//  ReactDOM.render(<Appl/>, document.getElementById('root'));
 
 
 //  ReactDOM.render(<Switch/>,document.getElementById('root'));
